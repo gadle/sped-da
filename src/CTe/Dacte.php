@@ -1752,12 +1752,14 @@ class Dacte extends DaCommon
             'size' => 5,
             'style' => '');
         $this->pdf->textBox($x + 8, $y, $w, $h, $texto, $aFont, 'T', 'L', 0, '');
-        $texto = number_format($valorPesoBruto, 3, ",", ".");
-        $aFont = array(
-            'font' => $this->fontePadrao,
-            'size' => 7,
-            'style' => 'B');
-        $this->pdf->textBox($x + 2, $y + 3, $w, $h, $texto, $aFont, 'T', 'L', 0, '');
+        if (is_numeric($valorPesoBruto)) {
+            $texto = number_format($valorPesoBruto, 3, ",", ".");
+            $aFont = array(
+                'font' => $this->fontePadrao,
+                'size' => 7,
+                'style' => 'B');
+            $this->pdf->textBox($x + 2, $y + 3, $w, $h, $texto, $aFont, 'T', 'L', 0, '');
+        }
 
         //PESO BASE CÁLCULO (KG)
         $x = $w * 0.12;
@@ -1768,12 +1770,14 @@ class Dacte extends DaCommon
             'size' => 5,
             'style' => '');
         $this->pdf->textBox($x + 20, $y, $w, $h, $texto, $aFont, 'T', 'L', 0, '');
-        $texto = number_format($valorPesoBaseCalculo, 3, ",", ".");
-        $aFont = array(
-            'font' => $this->fontePadrao,
-            'size' => 7,
-            'style' => 'B');
-        $this->pdf->textBox($x + 17, $y + 3, $w, $h, $texto, $aFont, 'T', 'L', 0, '');
+        if (is_numeric($valorPesoBaseCalculo)) {
+            $texto = number_format($valorPesoBaseCalculo, 3, ",", ".");
+            $aFont = array(
+                'font' => $this->fontePadrao,
+                'size' => 7,
+                'style' => 'B');
+            $this->pdf->textBox($x + 17, $y + 3, $w, $h, $texto, $aFont, 'T', 'L', 0, '');
+        }
 
         //PESO AFERIDO (KG)
         $x = $w * 0.24;
@@ -1784,12 +1788,14 @@ class Dacte extends DaCommon
             'size' => 5,
             'style' => '');
         $this->pdf->textBox($x + 35, $y, $w, $h, $texto, $aFont, 'T', 'L', 0, '');
-        $texto = number_format($valorPesoAferido, 3, ",", ".");
-        $aFont = array(
-            'font' => $this->fontePadrao,
-            'size' => 7,
-            'style' => 'B');
-        $this->pdf->textBox($x + 28, $y + 3, $w, $h, $texto, $aFont, 'T', 'L', 0, '');
+        if (is_numeric($valorPesoAferido)) {
+            $texto = number_format($valorPesoAferido, 3, ",", ".");
+            $aFont = array(
+                'font' => $this->fontePadrao,
+                'size' => 7,
+                'style' => 'B');
+            $this->pdf->textBox($x + 28, $y + 3, $w, $h, $texto, $aFont, 'T', 'L', 0, '');
+        }
 
         //CUBAGEM(M3)
         $x = $w * 0.36;
