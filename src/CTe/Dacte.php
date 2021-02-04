@@ -224,7 +224,7 @@ class Dacte extends DaCommon
      * @param string $papel (Opcional) Estabelece o tamanho do papel (ex. A4)
      * @return string O ID da NFe numero de 44 digitos extraido do arquivo XML
      */
-    protected function monta(
+    public function monta(
         $logo = ''
     ) {
         if (!empty($logo)) {
