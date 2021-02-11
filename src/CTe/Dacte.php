@@ -562,9 +562,15 @@ class Dacte extends DaCommon
         $mun = $this->getTagValue($this->enderEmit, "xMun");
         $UF = $this->getTagValue($this->enderEmit, "UF");
         $xPais = $this->getTagValue($this->enderEmit, "xPais");
-        $texto = $lgr . "," . $nro . "\n" . $bairro . " - "
+
+        $textoLinha1 = $lgr . "," . $nro;
+        if ($cpl) {
+            $textoLinha1 .= " - " . $cpl;
+        }
+        $texto = $textoLinha1 . "\n" . $bairro . " - "
             . $CEP . " - " . $mun . " - " . $UF . " " . $xPais
             . "\n  Fone/Fax: " . $fone;
+
         $this->pdf->textBox($x1 - 5, $y1 + 2, $tw + 5, 8, $texto, $aFont, 'T', 'C', 0, '');
         //CNPJ/CPF IE
         $cpfCnpj = $this->formatCNPJCPF($this->emit);
