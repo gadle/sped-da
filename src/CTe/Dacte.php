@@ -563,7 +563,7 @@ class Dacte extends DaCommon
         $UF = $this->getTagValue($this->enderEmit, "UF");
         $xPais = $this->getTagValue($this->enderEmit, "xPais");
 
-        $textoLinha1 = $lgr . "," . $nro;
+        $textoLinha1 = $lgr . ", " . $nro;
         if ($cpl) {
             $textoLinha1 .= " - " . $cpl;
         }
